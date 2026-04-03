@@ -95,7 +95,26 @@ Dins de `~/.github`, el destí és únic (l'Organització). El protocol és:
 * **Error "Not a git repository":** Estàs a la Home (`/home/srustullet`). Mou-te a una carpeta oficial amb `cd`.
 * **Error "Rejected":** GitHub té canvis més nous. Fes sempre `git pull --rebase` abans de fer el `push`.
 * **He editat a la Home per error:** Si el fitxer bo és a `/home/srustullet`, mou-lo abans de pujar:
-  `cp ~/README_PROTOCOLS.md ~/.github/README_PROTOCOLS.md`
+  `cp ~/README.md ~/.github/README.md`
+
+## 🚀 Dreceres de Control (Àlies)
+
+Per facilitar la gestió dels 16 fils, s'han configurat els següents àlies al fitxer `~/.bash_aliases`. Aquestes ordres permeten orquestrar tot el sistema amb el mínim d'esforç cognitiu.
+
+### 📂 Navegació
+* `admin`: Et porta directament a la torre de control (`~/cistell-admin`).
+* `cistell`: Et porta a la carpeta on viuen els 16 repositoris/fils (`~/cistell`).
+
+### 🛠️ Manteniment
+* `setup-cistell`: Executa l'auditoria en bulk per configurar els remots (`origin` i `org`) a cada carpeta segons el `repos.txt`.
+* `edita-repos`: Obre el fitxer de configuració de fils per afegir-ne de nous.
+* `check-fil`: Mostra cap a on apunten els "túnels" (remots) del repositori on et trobes.
+
+### 🔄 Sincronització (El Flux de Treball)
+* `basket`: L'ordre mestre. Dins de qualsevol fil, fa: `pull` -> `add` -> `commit` -> `push` (Personal + Org).
+* `push-admin`: Puja els canvis dels teus scripts de control i de la documentació al teu GitHub personal.
+
+> **Nota de seguretat:** Si afegeixes un àlies nou manualment a `~/.bash_aliases`, recorda executar `source ~/.bashrc` perquè el terminal l'aprengui.
 
 ---
 *Mantra: Sandbox per jugar (nom curt), Cistell per guardar (fil-XX). Si et sents perdut, "ls -la" i torna a la lògica.*
